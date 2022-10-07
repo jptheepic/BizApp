@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE4DE13B28EFCED700967D68 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EE4DE13A28EFCED700967D68 /* FirebaseAuth */; };
+		EE4DE13D28EFCED700967D68 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EE4DE13C28EFCED700967D68 /* FirebaseFirestore */; };
+		EE4DE13F28EFCFE800967D68 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE4DE13E28EFCFE800967D68 /* GoogleService-Info.plist */; };
+		EE4DE14128EFD58800967D68 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4DE14028EFD58800967D68 /* ListView.swift */; };
+		EE4DE14328EFD6AF00967D68 /* BiazGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4DE14228EFD6AF00967D68 /* BiazGame.swift */; };
+		EE4DE14528EFD76F00967D68 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4DE14428EFD76F00967D68 /* DataManager.swift */; };
 		EE4FBE2628EA412300DEDB4B /* BizAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4FBE2528EA412300DEDB4B /* BizAppApp.swift */; };
 		EE4FBE2828EA412300DEDB4B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4FBE2728EA412300DEDB4B /* ContentView.swift */; };
 		EE4FBE2A28EA412400DEDB4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE4FBE2928EA412400DEDB4B /* Assets.xcassets */; };
@@ -34,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EE4DE13E28EFCFE800967D68 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		EE4DE14028EFD58800967D68 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		EE4DE14228EFD6AF00967D68 /* BiazGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiazGame.swift; sourceTree = "<group>"; };
+		EE4DE14428EFD76F00967D68 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		EE4FBE2228EA412300DEDB4B /* BizApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BizApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE4FBE2528EA412300DEDB4B /* BizAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BizAppApp.swift; sourceTree = "<group>"; };
 		EE4FBE2728EA412300DEDB4B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,6 +61,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE4DE13B28EFCED700967D68 /* FirebaseAuth in Frameworks */,
+				EE4DE13D28EFCED700967D68 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,7 +108,11 @@
 			children = (
 				EE4FBE2528EA412300DEDB4B /* BizAppApp.swift */,
 				EE4FBE2728EA412300DEDB4B /* ContentView.swift */,
+				EE4DE14028EFD58800967D68 /* ListView.swift */,
+				EE4DE14228EFD6AF00967D68 /* BiazGame.swift */,
+				EE4DE14428EFD76F00967D68 /* DataManager.swift */,
 				EE4FBE2928EA412400DEDB4B /* Assets.xcassets */,
+				EE4DE13E28EFCFE800967D68 /* GoogleService-Info.plist */,
 				EE4FBE2B28EA412400DEDB4B /* Preview Content */,
 			);
 			path = BizApp;
@@ -143,6 +159,10 @@
 			dependencies = (
 			);
 			name = BizApp;
+			packageProductDependencies = (
+				EE4DE13A28EFCED700967D68 /* FirebaseAuth */,
+				EE4DE13C28EFCED700967D68 /* FirebaseFirestore */,
+			);
 			productName = BizApp;
 			productReference = EE4FBE2228EA412300DEDB4B /* BizApp.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +235,9 @@
 				Base,
 			);
 			mainGroup = EE4FBE1928EA412300DEDB4B;
+			packageReferences = (
+				EE4DE13928EFCED700967D68 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = EE4FBE2328EA412300DEDB4B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,6 +256,7 @@
 			files = (
 				EE4FBE2D28EA412400DEDB4B /* Preview Assets.xcassets in Resources */,
 				EE4FBE2A28EA412400DEDB4B /* Assets.xcassets in Resources */,
+				EE4DE13F28EFCFE800967D68 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +282,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE4FBE2828EA412300DEDB4B /* ContentView.swift in Sources */,
+				EE4DE14528EFD76F00967D68 /* DataManager.swift in Sources */,
 				EE4FBE2628EA412300DEDB4B /* BizAppApp.swift in Sources */,
+				EE4DE14328EFD6AF00967D68 /* BiazGame.swift in Sources */,
+				EE4DE14128EFD58800967D68 /* ListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,6 +604,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EE4DE13928EFCED700967D68 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EE4DE13A28EFCED700967D68 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE4DE13928EFCED700967D68 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		EE4DE13C28EFCED700967D68 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE4DE13928EFCED700967D68 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EE4FBE1A28EA412300DEDB4B /* Project object */;
 }

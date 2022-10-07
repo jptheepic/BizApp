@@ -6,13 +6,23 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct ContentView: View {
     
     @State private var email = ""
     @State private var password = ""
+    @State private var userIsLoggedIn = false
     
     var body: some View {
+        if userIsLoggedIn {
+            ListView()
+        } else {
+            content
+        }
+    }
+    
+    var content: some View {
         ZStack {
             Color.black
             
@@ -25,7 +35,7 @@ struct ContentView: View {
                 Text("Biz Tracker")
                     .foregroundColor(.white)
                     .font(.system(size:40, weight:.bold, design: .rounded))
-                    .offset(x: -100, y:-100)
+                    .offset(x: 0, y:-100)
                     
                 TextField("Email", text:$email)
                     .foregroundColor(.white)
@@ -41,8 +51,8 @@ struct ContentView: View {
                 SecureField("Password",text: $password)
                     .foregroundColor(.white)
                     .textFieldStyle(.plain)
-                    placeholder(when:email.isEmpty) {
-                        Text("Email")
+                    .placeholder(when:password.isEmpty) {
+                        Text("Password")
                             .foregroundColor(.white)
                             .bold()
                     }
@@ -50,7 +60,7 @@ struct ContentView: View {
                     .frame(width:350, height: 1)
                     .foregroundColor(.white)
                 Button{
-                    //sign up in DB
+                    register()
                 } label: {
                     Text("Sign Up for Biz")
                         .bold()
@@ -66,7 +76,7 @@ struct ContentView: View {
                 .offset(y:100)
                 
                 Button{
-                    //login page
+                    login()
                 } label: {
                     Text("Already have an account? Login")
                         .bold()
@@ -75,21 +85,38 @@ struct ContentView: View {
                 .padding(.top)
                 .offset(y:110)
                                 
-                
             }
             
             .frame(width: 350)
+            .onAppear{
+                Auth.auth().addStateDidChangeListener { auth, user in
+                    if user != nil {
+                        userIsLoggedIn.toggle()
+                    }
+                }
+            }
         }
-        
         .ignoresSafeArea()
+    }
+    
+    func login(){
+        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+            if error != nil {
+                print(error!.localizedDescription)
+            }
+        }
+    }
+    func register(){
+        Auth.auth().createUser(withEmail: email, password: password) {result, error in
+            // Build this more out later
+            if error != nil {
+                print(error!.localizedDescription)
+            }
+        }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+
 
 extension View{
     func placeholder<Content: View>(
@@ -104,3 +131,9 @@ extension View{
     }
 }
 
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
