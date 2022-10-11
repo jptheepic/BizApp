@@ -10,6 +10,8 @@ import Firebase
 
 @main
 struct BizAppApp: App {
+//    @StateObject var authentication = Authentication()
+    var userInfo = UserInfo()
     
     init() {
         FirebaseApp.configure()
@@ -17,7 +19,8 @@ struct BizAppApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(userInfo)
         }
     }
 }
+
