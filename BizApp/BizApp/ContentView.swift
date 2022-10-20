@@ -9,7 +9,6 @@ import SwiftUI
 import Firebase
 
 struct ContentView: View {
-//    @EnvironmentObject var authentication: Authentication
     @EnvironmentObject var userInfo: UserInfo
     var body: some View {
         Group {

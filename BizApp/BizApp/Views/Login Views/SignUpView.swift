@@ -14,7 +14,7 @@ struct SignUpView: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var showError = false
     @State private var errorString = ""
-
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -89,3 +89,4 @@ struct SignUpView_Previews: PreviewProvider {
         SignUpView()
     }
 }
+

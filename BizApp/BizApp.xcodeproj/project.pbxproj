@@ -27,6 +27,9 @@
 		EE325A7928F4D639006BE608 /* FBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE325A7528F4D639006BE608 /* FBUser.swift */; };
 		EE325A7C28F4D641006BE608 /* FBAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE325A7A28F4D641006BE608 /* FBAuth.swift */; };
 		EE325A7D28F4D641006BE608 /* FBAuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE325A7B28F4D641006BE608 /* FBAuthError.swift */; };
+		EE325A8028FFCC2C006BE608 /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE325A7F28FFCC2C006BE608 /* LeaderboardView.swift */; };
+		EE325A822900E72F006BE608 /* LogGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE325A812900E72F006BE608 /* LogGameView.swift */; };
+		EE325A862900EAF1006BE608 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE325A852900EAF1006BE608 /* UserProfileView.swift */; };
 		EE4DE13B28EFCED700967D68 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = EE4DE13A28EFCED700967D68 /* FirebaseAuth */; };
 		EE4DE13D28EFCED700967D68 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EE4DE13C28EFCED700967D68 /* FirebaseFirestore */; };
 		EE4DE13F28EFCFE800967D68 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE4DE13E28EFCFE800967D68 /* GoogleService-Info.plist */; };
@@ -80,6 +83,9 @@
 		EE325A7528F4D639006BE608 /* FBUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBUser.swift; sourceTree = "<group>"; };
 		EE325A7A28F4D641006BE608 /* FBAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBAuth.swift; sourceTree = "<group>"; };
 		EE325A7B28F4D641006BE608 /* FBAuthError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBAuthError.swift; sourceTree = "<group>"; };
+		EE325A7F28FFCC2C006BE608 /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
+		EE325A812900E72F006BE608 /* LogGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogGameView.swift; sourceTree = "<group>"; };
+		EE325A852900EAF1006BE608 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		EE4DE13E28EFCFE800967D68 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		EE4DE14228EFD6AF00967D68 /* BizGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BizGame.swift; sourceTree = "<group>"; };
 		EE4DE14428EFD76F00967D68 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -125,12 +131,8 @@
 		EE325A4628F47E2E006BE608 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				EE325A6728F4D2B5006BE608 /* SignInWithAppleView.swift */,
-				EE325A6028F4CF6B006BE608 /* SignUpView.swift */,
-				EE325A6128F4CF6B006BE608 /* ForgotPasswordView.swift */,
-				EE325A5F28F4CF6B006BE608 /* SignInWithEmailView.swift */,
-				EE325A5928F4C975006BE608 /* HomeView.swift */,
-				EE325A6528F4D0EB006BE608 /* LoginView.swift */,
+				EE325A832900E73F006BE608 /* Login Views */,
+				EE325A842900E762006BE608 /* Home Views */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -138,7 +140,7 @@
 		EE325A4728F47E53006BE608 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				EE325A4D28F48ADB006BE608 /* LoginViewModel.swift */,
+				EE325A5B28F4CF05006BE608 /* UserViewModel.swift */,
 				EE325A5728F4C64A006BE608 /* UserInfo.swift */,
 			);
 			path = Models;
@@ -157,7 +159,6 @@
 			children = (
 				EE325A7A28F4D641006BE608 /* FBAuth.swift */,
 				EE325A7B28F4D641006BE608 /* FBAuthError.swift */,
-				EE325A5B28F4CF05006BE608 /* UserViewModel.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -176,13 +177,38 @@
 		EE325A7E28F4E1A5006BE608 /* outdated */ = {
 			isa = PBXGroup;
 			children = (
+				EE325A4D28F48ADB006BE608 /* LoginViewModel.swift */,
 				EE325A4828F47E69006BE608 /* Credentials.swift */,
 				EE325A5328F4AE00006BE608 /* oldLoginView.swift */,
+				EE4DE14428EFD76F00967D68 /* DataManager.swift */,
 				EE4DE14228EFD6AF00967D68 /* BizGame.swift */,
 				EE325A5528F4B6BB006BE608 /* Authentication.swift */,
 				EE325A5128F48DFF006BE608 /* oldoldLoginView.swift */,
 			);
 			path = outdated;
+			sourceTree = "<group>";
+		};
+		EE325A832900E73F006BE608 /* Login Views */ = {
+			isa = PBXGroup;
+			children = (
+				EE325A6528F4D0EB006BE608 /* LoginView.swift */,
+				EE325A5F28F4CF6B006BE608 /* SignInWithEmailView.swift */,
+				EE325A6128F4CF6B006BE608 /* ForgotPasswordView.swift */,
+				EE325A6728F4D2B5006BE608 /* SignInWithAppleView.swift */,
+				EE325A6028F4CF6B006BE608 /* SignUpView.swift */,
+			);
+			path = "Login Views";
+			sourceTree = "<group>";
+		};
+		EE325A842900E762006BE608 /* Home Views */ = {
+			isa = PBXGroup;
+			children = (
+				EE325A5928F4C975006BE608 /* HomeView.swift */,
+				EE325A812900E72F006BE608 /* LogGameView.swift */,
+				EE325A7F28FFCC2C006BE608 /* LeaderboardView.swift */,
+				EE325A852900EAF1006BE608 /* UserProfileView.swift */,
+			);
+			path = "Home Views";
 			sourceTree = "<group>";
 		};
 		EE4FBE1928EA412300DEDB4B = {
@@ -217,7 +243,6 @@
 				EE325A4728F47E53006BE608 /* Models */,
 				EE325A4628F47E2E006BE608 /* Views */,
 				EE325A4A28F47EBF006BE608 /* Services */,
-				EE4DE14428EFD76F00967D68 /* DataManager.swift */,
 				EE4FBE2928EA412400DEDB4B /* Assets.xcassets */,
 				EE4DE13E28EFCFE800967D68 /* GoogleService-Info.plist */,
 				EE4FBE2B28EA412400DEDB4B /* Preview Content */,
@@ -389,6 +414,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE325A7D28F4D641006BE608 /* FBAuthError.swift in Sources */,
+				EE325A862900EAF1006BE608 /* UserProfileView.swift in Sources */,
 				EE325A4928F47E69006BE608 /* Credentials.swift in Sources */,
 				EE325A6328F4CF6B006BE608 /* SignUpView.swift in Sources */,
 				EE325A6428F4CF6B006BE608 /* ForgotPasswordView.swift in Sources */,
@@ -398,6 +424,7 @@
 				EE325A7C28F4D641006BE608 /* FBAuth.swift in Sources */,
 				EE325A5228F48DFF006BE608 /* oldoldLoginView.swift in Sources */,
 				EE4DE14528EFD76F00967D68 /* DataManager.swift in Sources */,
+				EE325A8028FFCC2C006BE608 /* LeaderboardView.swift in Sources */,
 				EE325A4E28F48ADB006BE608 /* LoginViewModel.swift in Sources */,
 				EE4FBE2628EA412300DEDB4B /* BizAppApp.swift in Sources */,
 				EE4DE14328EFD6AF00967D68 /* BizGame.swift in Sources */,
@@ -410,6 +437,7 @@
 				EE325A5C28F4CF05006BE608 /* UserViewModel.swift in Sources */,
 				EE325A5A28F4C975006BE608 /* HomeView.swift in Sources */,
 				EE325A6228F4CF6B006BE608 /* SignInWithEmailView.swift in Sources */,
+				EE325A822900E72F006BE608 /* LogGameView.swift in Sources */,
 				EE325A5828F4C64A006BE608 /* UserInfo.swift in Sources */,
 				EE325A5628F4B6BB006BE608 /* Authentication.swift in Sources */,
 			);

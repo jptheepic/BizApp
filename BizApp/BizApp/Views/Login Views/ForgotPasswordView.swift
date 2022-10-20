@@ -2,8 +2,6 @@
 //  ForgotPasswordView.swift
 //  Signin With Apple
 //
-//  Created by Stewart Lynch on 2020-03-19.
-//  Copyright © 2020 CreaTECH Solutions. All rights reserved.
 //
 
 import SwiftUI
@@ -27,6 +25,7 @@ struct ForgotPasswordView: View {
                         case .success( _):
                             break
                         }
+                        self.showAlert = true
                     }
                 }) {
                     Text("Reset")
@@ -47,7 +46,7 @@ struct ForgotPasswordView: View {
                     self.presentationMode.wrappedValue.dismiss()
                 })
                 .alert(isPresented: $showAlert) {
-                    Alert(title: Text("Password Reset"), message: Text(self.errString ?? "Success. Reset email sent successdfully. Check your email"), dismissButton: .default(Text("OK")) {
+                    Alert(title: Text("Password Reset"), message: Text(self.errString ?? "Success. Reset email sent successfully. Check your email"), dismissButton: .default(Text("OK")) {
                         self.presentationMode.wrappedValue.dismiss()
                     })
             }

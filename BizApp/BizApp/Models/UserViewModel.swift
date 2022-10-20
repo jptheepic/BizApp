@@ -25,7 +25,6 @@ struct UserViewModel {
     }
     
     func isEmailValid(_email: String) -> Bool {
-        // Password must be 8 chars, contain a capital letter and a number
         let passwordTest = NSPredicate(format: "SELF MATCHES %@",
                                        "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}")
         return passwordTest.evaluate(with: email)
@@ -59,7 +58,8 @@ struct UserViewModel {
     
     // MARK: - Validation Error Strings
     var validNameText: String {
-        if !isEmpty(_field: fullname) {
+        // Here I am checking to make sure that the field is not empty and that the fullname feild contains a space that is in the middle of the string
+        if !isEmpty(_field: fullname) && fullname.containsMiddleWhitespace{
             return ""
         } else {
             return "Enter your full name"
@@ -88,6 +88,17 @@ struct UserViewModel {
             return ""
         } else {
             return "Password fields do not match."
+        }
+    }
+}
+
+
+extension String {
+    var containsMiddleWhitespace : Bool {
+        if self.contains(" ") && !self.hasSuffix(" ") && !self.hasPrefix(" ") {
+            return true
+        } else {
+            return false
         }
     }
 }
